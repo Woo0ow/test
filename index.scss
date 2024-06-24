@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+.grid {
+    display: grid;
+    grid-template-areas:
+        "nav container";
+    grid-template-columns: 1fr 8fr;
+
+    .nav {
+        grid-area: nav;
+    }
+}
+
+.grid .container {
+    display: grid;
+    grid-area: container;
+    grid-template-areas:
+        "left . right";
+    grid-template-columns: 1fr 2px 1fr;
+    height: 100vh;
+    position: relative;
+
+    .left {
+        grid-area: left;
+        background: yellowgreen;
+        min-width: 200px;
+    }
+
+    .right {
+        grid-area: right;
+    }
+
+    .resizeline {
+        cursor: col-resize;
+        background-color: pink;
+        position: absolute;
+        width:2px;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+        &:hover {
+            background-color: skyblue;
+        }
+
+        &:hover {
+            background-color: skyblue;
+        }
+    }
+}
